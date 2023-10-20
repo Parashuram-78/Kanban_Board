@@ -21,8 +21,10 @@ import priority3 from "../../imgs/priority-3.png";
 import priority4 from "../../imgs/priority-4.png";
 
 const GroupBy = ({ tickets, groupBy, orderBy, users }) => {
+  // Define state to store updated filtered tickets
   const [updatedFilteredTickets, setUpdatedFilteredTickets] = useState([]);
 
+  // Define a mapping of user icons
   const userIcons = {
     anoopsharma: anoopsharma,
     shankarkumar: shankarkumar,
@@ -31,11 +33,13 @@ const GroupBy = ({ tickets, groupBy, orderBy, users }) => {
     yogesh: yogesh,
   };
 
+  // Map user data to include icons
   const user = users.map((user) => ({
     ...user,
     icon: userIcons[user.name.toLowerCase().split(" ").join("")] || avatar,
   }));
 
+  // Define status options
   const status = [
     {
       icon: backlog,
@@ -59,6 +63,7 @@ const GroupBy = ({ tickets, groupBy, orderBy, users }) => {
     },
   ];
 
+  // Define priority options
   const priority = [
     {
       icon: priority0,
@@ -87,6 +92,7 @@ const GroupBy = ({ tickets, groupBy, orderBy, users }) => {
     },
   ];
 
+  // Function to update the filtered tickets based on grouping and ordering
   const updateFilteredTickets = () => {
     switch (groupBy) {
       case "priority":
@@ -173,6 +179,7 @@ const GroupBy = ({ tickets, groupBy, orderBy, users }) => {
   }, []);
 
   useEffect(() => {
+    // Update filtered tickets when grouping or ordering changes
     updateFilteredTickets();
   }, [groupBy, tickets, orderBy]);
 
