@@ -9,6 +9,8 @@ import priority2 from "../../imgs/priority-2.png";
 import priority3 from "../../imgs/priority-3.png";
 import priority4 from "../../imgs/priority-4.png";
 import styles from "./styles.module.css";
+
+// Define a mapping of image URLs for different card statuses
 const imageMapping = {
   backlog: backlog,
   inprogress: inprogress,
@@ -16,15 +18,23 @@ const imageMapping = {
   done: done,
 };
 
+// Define a mapping of priority images
 const priorityMapping = [priority0, priority1, priority2, priority3, priority4];
+
+// Card component
 const Card = ({ groupBy, cardId, cardTitle, tag, status, priority, user, usersId }) => {
+  // Convert the status to lowercase and remove spaces from the status string
   const stat = status.toLowerCase().split(" ").join("");
 
+  // Get the image URL for the current card status
   const imageUrl = imageMapping[stat];
 
-  useEffect(()=>{
+  // useEffect to log the user information when the component mounts
+  useEffect(() => {
     console.log(user);
-  },[])
+  }, []);
+
+  // Function to get user availability based on userId
   const getUserAvailability = (userId) => {
     const users = user.find((user) => user.id === userId);
     return users;
