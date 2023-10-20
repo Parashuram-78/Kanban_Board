@@ -1,7 +1,7 @@
 # Kanban Board React App
 
 Welcome to my Kanban Board React App repository! The goal of this application is to interact with the provided API and display the data in a dynamic Kanban board format based on user preferences. When a user clicks the "display" button and selects a grouping or ordering option, the Kanban board should dynamically adjust to reflect the user's choice.
-
+The Deployed app can be seen here [Kanbann Board](https://kanban-board-ei5ybh1o2-parashuram-78.vercel.app/).
 ## Before You Begin
 Before you begin we recommend you read about the basic building blocks that assemble my Quicksell project:
 * React.js - A JavaScript library for building user interfaces build by Facebook. Go through [React official website](https://reactjs.org/) and proceed to their [documntations](https://reactjs.org/docs/getting-started.html) and [tutorials](https://reactjs.org/tutorial/tutorial.html), which should help you understand the React Framework easily.
