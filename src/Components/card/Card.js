@@ -40,9 +40,6 @@ const Card = ({ groupBy, cardId, cardTitle, tag, status, priority, user, usersId
               <div className={styles.cardOwner} title={getUserAvailability(usersId).name}>
                 <img className={styles.ownerAvatar} src={getUserAvailability(usersId).icon} alt="" />
                 <div
-                  // className={`availability ${
-                  //   getUserAvailability(usersId).available ? "available" : ""
-                  // }`}
                   className={getUserAvailability(usersId).available ? styles.availabilityAvailable : styles.availability}
                 ></div>
               </div>
